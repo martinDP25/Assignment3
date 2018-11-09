@@ -14,15 +14,16 @@ public class Assignment3 {
 
 		
 		Random randG=new Random();
-		int x, i, goals;
+		int x, i, g=16;
+		int goals1[]= new int [8];
+		int goals2[]= new int [8];
 		String favTeam;
 		String[] teams16= {"Portugal", "Italy", "Brazil", "England", "Greece", "Canada", "Spain", "Germany", 
 				"France", "Switzerland", "Sweden", "Denmark", "Ireland", "Belgium", "Columbia", "Russia"};
+		String[] teams8, teams4, teams2;
 		
-		String[][] match1 = {{"Portugal", "Italy"}, {"Brazil", "England"}, {"Greece", "Canada"}, {"Spain", "Germany"}, 
+		String[][] round1 = {{"Portugal", "Italy"}, {"Brazil", "England"}, {"Greece", "Canada"}, {"Spain", "Germany"}, 
 				{"France", "Switzerland"}, {"Sweden", "Denmark"}, {"Ireland", "Belgium"}, {"Columbia", "Russia"}};
-		 
-		
 		
 		Scanner myKeys=new Scanner(System.in);
 
@@ -38,20 +39,19 @@ public class Assignment3 {
 				System.out.println("Sorry, your team is not in the Round of 16"); 	
 			}
 		}
-		for(x=0; x<match1.length; x++)
+		System.out.println("Round of 16");
+		for(x=0; x<round1.length; x++)
 		{
-			for(i=0; i<match1[x].length; i++) 
+			for(i=0; i<round1[x].length; i++) 
 			{
-				System.out.print(match1[x][i] + " : ");
+				goals1[i]=randG.nextInt(5);
+				goals2[i]=randG.nextInt(5);
+				System.out.print("[" + round1[x][i] + " " + goals1[i] + " : " + goals2[i] + " " + round1[x][++i] + "]");
 			}
-			System.out.println(" ");
+			System.out.print(" ");
 		}
-		/*for(x=0; x<teams16.length; x++)
-		{
-			goals=randG.nextInt(5);
-			System.out.print(teams16[x] + " " + goals + ":");
-			goals=randG.nextInt(5);
-			System.out.println(teams16[++x] + " " + goals);
-		}*/
+		System.out.println("");
+		System.out.println("Quarter Finals");
 	}
+	
 }
